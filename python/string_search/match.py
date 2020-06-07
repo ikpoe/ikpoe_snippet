@@ -25,12 +25,13 @@ def match(text, keyword, algorithm="builtin"):
   }
   matcher = algorithm_dict[algorithm]
 
-  #handle matching without asterisk (*)
+  #handle matching with asterisk (*)
   if "*" in keyword:
     if len(keyword) > 0:
       segment_1, segment_2 = keyword.split("*")
     else:
       return 0
+  #handle matching without asterisk (*)
   else:
       return matcher(text, keyword)
 
